@@ -1,14 +1,24 @@
+const cors = require('cors');
+const express = require('express');
 const { ApolloServer } = require('apollo-server');
 const typeDefs = require('./schema');
 
+require('dotenv').config();
+
+const app = express();
+
+app.use(cors());
+
 const movies = [
     {
-      title: 'Dunes',
-      director: 'Denis Villeneuve',
+        id: 1,   
+        title: 'Dunes',
+        director: 'Denis Villeneuve',
     },
     {
-      title: 'Blade Runner',
-      director: 'Ridley Scott',
+        id: 2,
+        title: 'Blade Runner',
+        director: 'Ridley Scott',
     },
   ];
 
@@ -17,6 +27,7 @@ const movies = [
 const resolvers = {
     Query: {
       movies: () => movies,
+      me: () => {return {email: "Jeremy"}}
     },
   };
   

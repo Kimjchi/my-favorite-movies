@@ -36,6 +36,12 @@ const typeDefs = gql`
     addFavoriteMovie(movieId: ID!): UserUpdateResponse!
     login(email: String): User
   }
+
+  type UserUpdateResponse {
+    success: Boolean!
+    message: String
+    movies: [Movie]
+  }
 `;
 
 module.exports = typeDefs;
