@@ -20,6 +20,7 @@ const typeDefs = gql`
 
   type User {
     id: ID!
+    username: String!
     email: String!
     favoriteMovies: [Movie]!
     token: String
@@ -29,6 +30,7 @@ const typeDefs = gql`
     movies: [Movie]!
     movie(id: ID!): Movie
     me: User
+    user(id: ID!): User
   }
 
   type Mutation {
