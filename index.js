@@ -1,9 +1,9 @@
 const cors = require('cors');
 const express = require('express');
 const { ApolloServer } = require('apollo-server');
-const typeDefs = require('./schema');
-const { users, movies } = require('./models');
-const resolvers = require('./resolvers');
+const typeDefs = require('./src/schema');
+const { users, movies } = require('./src/models');
+const resolvers = require('./src/resolvers');
 
 require('dotenv').config();
 
